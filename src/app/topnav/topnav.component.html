@@ -1,0 +1,32 @@
+<mat-drawer-container class="drawer-container">
+
+    <!-- Main content -->
+    <div class="main-content">
+        <header class="top-nav">
+            <div class="healthmate-icon">
+                <img src="../../assets/healthmate_icon.svg" class="icon" />
+                <h1 class="avenir_black primaryText"> HEALTH
+                    <span class="secondaryText avenir_black"> MATE </span>
+                </h1>
+            </div>
+
+            <div class="healthmate-nav">
+
+                <ul class="navigation">
+                    <li class="avenir_light"> Home </li>
+                    <li class="avenir_light"> Features </li>
+                    <li class="avenir_light"> Screens </li>
+                    <li class="avenir_light"> Pricing </li>
+                    <li class="avenir_light"> Contacts </li>
+                    <li class="avenir_light"> Team </li>
+                </ul>
+                <mat-icon mat-icon-button (click)="toggleDrawer()">menu</mat-icon>
+            </div>
+
+        </header>
+
+    </div>
+
+    <div *ngIf="isDrawerOpen" class="overlay" (click)="closeDrawer()"></div>
+
+</mat-drawer-container>

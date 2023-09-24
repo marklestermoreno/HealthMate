@@ -1,0 +1,301 @@
+/* --------------------------------------- MIXINS -------------------------------------*/
+
+@mixin smaller_phone {
+  .home-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: start;
+    flex-direction: column-reverse;
+    padding: 0px;
+
+  }
+
+  .tagline-content {
+    text-align: center;
+    margin-top: 10px;
+
+    .primaryText {
+      font-size: 3rem;
+    }
+
+    .secondaryText {
+      margin-left: -0.7rem;
+    }
+
+    .avenir_light {
+      margin-top: -5px;
+      margin-left: 1px;
+      font-size: 1.5em;
+    }
+  }
+
+  .model-content {
+    text-align: center;
+    margin-right: -50px;
+
+    .big-phone {
+      width: 125px;
+      margin-right: 50px;
+    }
+
+    .small-phone {
+      width: 75px;
+      margin-right: 0px;
+    }
+  }
+
+}
+
+
+@mixin large_extralarge {
+  .home-section {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .model-content {
+    margin-left: 10rem;
+  }
+
+  .tagline-content {
+    margin-right: 10rem;
+  }
+
+  .big-phone {
+    width: 500px;
+    margin-left: -30px;
+  }
+
+  .small-phone {
+    width: 450px;
+    margin-left: -100px;
+  }
+
+
+}
+
+.home-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+  background-image: url('../../assets/background.png');
+  background-size: cover;
+  user-select: none;
+}
+
+.tagline-content {
+  margin-left: 20px;
+  margin-top: 200px;
+
+  .primaryText {
+    font-size: 4em;
+  }
+
+  .secondaryText {
+    margin-left: -15px;
+  }
+
+  .avenir_light {
+    margin-top: -5px;
+    margin-left: 1px;
+    font-size: 1.4em;
+  }
+
+  .btn-healthmate {
+    align-items: center;
+    text-align: center;
+    margin: 30px 0px;
+    padding: 10px;
+    background-color: #222;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: white;
+    transition-duration: 300ms;
+    transform: translateY(5px);
+  }
+
+  .btn-healthmate:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #222;
+    color: #222;
+    transition-duration: 300ms;
+    transform: translateY(-5px);
+  }
+
+  .android-icon {
+    margin: 0px 2px -5px 0px;
+  }
+
+}
+
+.model-content {
+
+  margin-right: 100px;
+  justify-content: start;
+
+  .big-phone {
+    width: 300px;
+    margin-left: -30px;
+  }
+
+  .small-phone {
+    width: 250px;
+    margin-left: -120px;
+  }
+
+  .big-phone,
+  .small-phone {
+    transform-origin: bottom;
+  }
+
+}
+
+
+/* -----------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+/* ------------------------------  Smaller Phone Screens ----------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width:575px) {
+
+  @include smaller_phone();
+
+
+  .tagline-content {
+    margin-top: -10px;
+
+    .primaryText {
+      font-size: 2rem;
+    }
+
+    .secondaryText {
+      margin-left: -5px;
+    }
+
+    .avenir_light {
+      margin-top: 5px;
+      margin-left: 1px;
+      font-size: 1em;
+    }
+
+  }
+
+
+}
+
+
+/* -----------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+/* ------------------------------  Big Phone Screens: (576px ) ----------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+
+@media (min-width: 576px) and (max-width:767px) {
+
+  @include smaller_phone();
+
+}
+
+
+/* -----------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+/* ------------------------------  Tablet Screens: (768px) -------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .tagline-content {
+    margin-top: 120px;
+
+    .primaryText {
+      font-size: 2.5rem;
+    }
+
+    .secondaryText {
+      margin-left: -0.7rem;
+    }
+
+    .avenir_light {
+      margin-top: -5px;
+      margin-left: 1px;
+      font-size: 1.2em;
+    }
+  }
+
+  .model-content {
+    margin-right: 50px;
+
+    .big-phone {
+      width: 200px;
+      margin-left: -30px;
+    }
+
+    .small-phone {
+      width: 150px;
+      margin-left: -100px;
+    }
+  }
+
+}
+
+
+
+
+/* -----------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+/* ------------------------------  Laptop Screens: (1200px) -------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .tagline-content {
+    margin-top: 225px;
+
+    .primaryText {
+      font-size: 4rem;
+    }
+  }
+
+  .model-content {
+
+    .big-phone {
+      width: 250px;
+      margin-left: -30px;
+    }
+
+    .small-phone {
+      width: 200px;
+      margin-left: -100px;
+    }
+  }
+
+}
+
+
+/* -----------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+/* ---------------------------  Ultra Large Screens: (1900px) ------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------------*/
+
+@media (min-width: 1900px) {
+  @include large_extralarge();
+
+  .tagline-content {
+
+    margin-top: 250px;
+
+    .primaryText {
+      font-size: 3rem;
+    }
+  }
+}

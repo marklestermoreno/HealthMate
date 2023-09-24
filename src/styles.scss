@@ -1,1 +1,131 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Avenir-Black';
+    src: url('../src/assets/font/Avenir-Black.ttf') format('truetype'),
+         local('Avenir-Black');
+  }
+  
+@font-face {
+    font-family: 'Avenir-Heavy';
+    src: url('../src/assets/font/Avenir-Heavy.ttf') format('truetype'),
+         local('Avenir-Heavy');
+  }
+
+@font-face {
+    font-family: 'Avenir-Book';
+    src: url('../src/assets/font/Avenir-Book.ttf') format('truetype'),
+         local('Avenir-Book');
+  }
+
+@font-face {
+    font-family: 'Avenir-Light';
+    src: url('../src/assets/font/Avenir-Light.ttf') format('truetype'),
+         local('Avenir-Light');
+  }
+  
+@font-face {
+    font-family: 'Avenir-Medium';
+    src: url('../src/assets/font/Avenir-Medium.ttf') format('truetype'),
+         local('Avenir-Medium');
+  }
+
+@font-face {
+    font-family: 'Avenir-Roman';
+    src: url('../src/assets/font/Avenir-Roman.ttf') format('truetype'),
+         local('Avenir-Roman');
+  }
+
+  // Variables
+
+  $text_color: #777777;
+  $primary_color: #f26ca7;
+  $secondary_color: #89cff0; 
+
+  :root {
+    --primary-color: #{$primary_color};
+    --secondary-color: #{$secondary_color};
+    --text-color: #{$text_color};
+  }
+  
+
+   *{
+    font-family: "Avenir-Roman", "Helvetica", "Segoe UI", "Roboto", "Open Sans", 'Arial', sans-serif;
+    scroll-behavior: smooth;
+    color: $text_color;
+    margin: 0;
+    padding: 0;
+   }
+
+  .avenir_roman {
+    font-family: "Avenir-Roman", sans-serif;
+  
+    @supports (not (font-family: "Avenir-Roman")) {
+      font-family: "Helvetica", "Segoe UI", "Roboto", "Open Sans", 'Arial', sans-serif;
+      font-weight: 400;
+    }
+  }
+
+  .avenir_black {
+    font-family: "Avenir-Black", sans-serif;
+  
+    @supports (not (font-family: "Avenir-Black")) {
+      font-family: "Helvetica", "Segoe UI", "Roboto", "Open Sans", 'Arial', sans-serif;
+      font-weight: 900;
+    }
+  }
+
+  .avenir_heavy {
+    font-family: "Avenir-Heavy", sans-serif;
+  
+    @supports (not (font-family: "Avenir-Heavy")) {
+      font-family: "Helvetica", "Segoe UI", "Roboto", "Open Sans", 'Arial', sans-serif;
+      font-weight: 800;
+    }
+  }
+  
+  .avenir_medium {
+    font-family: "Avenir-Medium", sans-serif;
+  
+    @supports (not (font-family: "Avenir-Medium")) {
+      font-family: "Helvetica", "Segoe UI", "Roboto", "Open Sans", 'Arial', sans-serif;
+      font-weight: 600;
+    }
+  }
+
+  .avenir_book {
+    font-family: "Avenir-Book", sans-serif;
+  
+    @supports (not (font-family: "Avenir-Book")) {
+      font-family: "Helvetica", "Segoe UI", "Roboto", "Open Sans", 'Arial', sans-serif;
+      font-weight: 200;
+    }
+  }
+
+  .avenir_light {
+    font-family: "Avenir-Light", sans-serif;
+  
+    @supports (not (font-family: "Avenir-Light")) {
+      font-family: "Helvetica", "Segoe UI", "Roboto", "Open Sans", 'Arial', sans-serif;
+      font-weight: 100;
+    }
+  }
+
+  .primaryBackground {
+    background-color: $primary_color;
+  }
+
+  .secondaryBackground{
+    background-color: $secondary_color;
+  }
+
+  .primaryText {
+    color: $primary_color ;
+  }
+
+  .secondaryText {
+    color: $secondary_color;
+  }
+
+html, body { height: 100%; }
+body { margin: 0;  overflow-x: hidden !important;}

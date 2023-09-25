@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DrawerService } from './services/drawer.service';
+import { AssetsService } from './services/assets.service';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +8,28 @@ import { DrawerService } from './services/drawer.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'healthmate_webapp';
-
-  isDrawerOpen = false;
-
-  constructor(private drawerService: DrawerService){}
+;
+isDrawerOpen = false;
+assetsLoaded = false;
+  
+  constructor(
+    private drawerService: DrawerService, 
+    private assetsService: AssetsService
+    ) { }
 
   ngOnInit(): void {
-   this.drawerService.isDrawerOpen$.subscribe(isOpen => {
-     this.isDrawerOpen = isOpen;
-   });
+
+    this.assetsService.loadAssets()
+      .then(() => {
+        this.assetsLoaded = true;
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+    this.drawerService.isDrawerOpen$.subscribe(isOpen => {
+      this.isDrawerOpen = isOpen;
+    });
   }
-  
+
 }

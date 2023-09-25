@@ -1,17 +1,26 @@
-
 <!-- Toolbar -->
-<div class="healthcare_page"> 
-    <TopNav> </TopNav>
-    <div id="home">
-        <Home></Home>
-        <Features></Features>
-        <router-outlet></router-outlet>
-    </div>
-      <mat-drawer #drawer class="custom-drawer" position="end" mode="side" [opened]="isDrawerOpen">
-        <!-- Sidenav content -->
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-        </ul>
-      </mat-drawer>
+<div class="healthcare_page" *ngIf="assetsLoaded; else loadingIndicator">
+  <TopNav> </TopNav>
+  <div id="home">
+    <Home></Home>
+    <Features></Features>
+    <router-outlet></router-outlet>
+  </div>
+  <mat-drawer #drawer class="custom-drawer" position="end" mode="side" [opened]="isDrawerOpen">
+    <!-- Sidenav content -->
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ul>
+  </mat-drawer>
+
 </div>
+
+<ng-template #loadingIndicator>
+
+  <!-- Loading indicator for home component -->
+  <div class="centered-container">
+    <img src="../assets/loading.gif" alt="healthmate-loading" class="centered-image" />
+  </div>
+
+</ng-template>

@@ -1,5 +1,11 @@
 import { Component, HostListener } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { ActivatedRoute } from '@angular/router';
+import { ChangeDetectorRef } from '@angular/core';
+
+// Services
+
+import { AssetsService } from '../services/assets.service';
 
 @Component({
   selector: 'Home',
@@ -37,20 +43,42 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   ]
 
 })
-  export class HomeComponent {
+export class HomeComponent {
 
-    animationState = '';
-    windowWidth: number = window.innerWidth;
+  assetsLoaded = false;
+  assets: string[] = [];
 
-    ngOnInit() {
-      setTimeout(() => {
-        this.animationState = 'typing';
-      }, 1000); 
-    }
 
-    @HostListener('window:resize', ['$event'])
-      onResize(event: any) {
-      this.windowWidth = event.target.innerWidth;
+  animationState = '';
+  windowWidth: number = window.innerWidth;
+
+  constructor(private route: ActivatedRoute,
+    private assetsService: AssetsService,
+    private cdRef: ChangeDetectorRef
+  ) { }
+
+  ngOnInit() {
+
+    this.assetsService.loadAssets()
+      .then(loadedAssets => {
+        this.assets = loadedAssets.map((a) => a.src);
+        this.assetsLoaded = true;
+
+        // Run change detection to update the view
+        this.cdRef.detectChanges();
+      })
+      .catch(error => {
+        console.error(error);
+        // Handle error loading assets
+      });
+    setTimeout(() => {
+      this.animationState = 'typing';
+    }, 1000);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.windowWidth = event.target.innerWidth;
   }
 
 }

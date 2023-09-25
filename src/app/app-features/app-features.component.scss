@@ -1,0 +1,15 @@
+.centered-container{
+    align-items: center;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    padding: 120px 0px; 
+
+    .avenir_heavy {
+        font-size: 40px;
+        color: #1f1f1f;
+    }
+    .avenir_roman {
+        margin: 20px 0px;
+    }
+}

@@ -1,18 +1,20 @@
 <section class="home-section">
     <div class="tagline-content">
         <h1 class="avenir_black primaryText">
-        <!-- [@typingEffect]="animationState"> -->
-         HEALTH
+            <!-- [@typingEffect]="animationState"> -->
+            HEALTH
             <span class="secondaryText avenir_black"> MATE </span>
         </h1>
-        <p class="avenir_light"> Elevate Your Health Journey with Smart Care 
-            <br /> and Personalized Support {{windowWidth}} </p>
+        <p class="avenir_light"> Elevate Your Health Journey with Smart Care
+            <br /> and Personalized Support {{windowWidth}}
+        </p>
         <button class="btn-healthmate">
-            <mat-icon color="white" class="android-icon">android</mat-icon>  Download for Android
+            <mat-icon color="white" class="android-icon">android</mat-icon>
+            Download for Android
         </button>
     </div>
     <div class="model-content">
-        <img src="../../assets/big_phone_home.png" class="big-phone model" [@slideInFromBelow]  />
-        <img src="../../assets/small_phone_home.png" class="small-phone model"  [@slideInFromBelow] />
+        <img [src]="assets[0]" class="big-phone model" [@slideInFromBelow] />
+        <img [src]="assets[1]" class="small-phone model" [@slideInFromBelow] />
     </div>
 </section>

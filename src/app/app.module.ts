@@ -13,6 +13,8 @@ import { MatSidenavModule } from '@angular/material/sidenav'; // Import this
 
 // Services
 import { DrawerService } from './services/drawer.service';
+import { AssetsService } from './services/assets.service';
+
 import { AppFeaturesComponent } from './app-features/app-features.component';
 
 @NgModule({
@@ -29,7 +31,7 @@ import { AppFeaturesComponent } from './app-features/app-features.component';
     MatIconModule,
     MatSidenavModule
   ],
-  providers: [DrawerService],
+  providers: [DrawerService, AssetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

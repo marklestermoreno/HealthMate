@@ -21,7 +21,7 @@ export class AppRoutingModule {
         // { path: 'contacts', component: ContactsComponent },
         // { path: 'team', component: TeamComponent },
         { path: '', redirectTo: 'features', pathMatch: 'full' } // Default child route
-      ]
+      ],
     },
   ];
 }

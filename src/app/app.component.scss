@@ -5,19 +5,31 @@
   transform: translateX(100%);
   overflow: hidden !important;
 }
+
+.healthcare_page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.centered-container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center; // Center both horizontally and vertically
+}
+
+.centered-image {
+  width: 250px;
+}
+
+
+@media screen and (min-width: 1200px) {
   .healthcare_page {
     display: flex;
     flex-direction: column;
+    width: 100%;
     min-height: 100vh;
     background-color: #f2f2f2;
   }
-  
-@media screen and (min-width: 1200px) {
-    .healthcare_page {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        min-height: 100vh;
-        background-color: #f2f2f2;
-      }
 }

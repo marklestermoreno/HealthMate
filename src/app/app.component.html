@@ -1,11 +1,21 @@
 <!-- Toolbar -->
 <div class="healthcare_page" *ngIf="assetsLoaded; else loadingIndicator">
-  <TopNav> </TopNav>
-  <div id="home">
-    <Home></Home>
-    <Features></Features>
-    <router-outlet></router-outlet>
+  <div class="top-nav">
+    <TopNav> </TopNav>
   </div>
+  <div class="container">
+    <div id="home">
+      <Home></Home>
+    </div>
+    <div id="features">
+      <Features></Features>
+    </div>
+    <div id="aboutus">
+      <AboutUs></AboutUs>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
   <mat-drawer #drawer class="custom-drawer" position="end" mode="side" [opened]="isDrawerOpen">
     <!-- Sidenav content -->
     <ul>
@@ -13,6 +23,13 @@
       <li>Item 2</li>
     </ul>
   </mat-drawer>
+
+  <div class="scroll-to-top" (click)="scrollToTop()">
+    <button class="scroll-icon">
+      <mat-icon>arrow_upward</mat-icon>
+    </button>
+  </div>
+  
 
 </div>
 

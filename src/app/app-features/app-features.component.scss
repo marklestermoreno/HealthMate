@@ -1,15 +1,217 @@
-.centered-container{
+
+
+
+/* app-features.component.scss */
+
+.centered-container {
     align-items: center;
-    text-align: center;
-    display: grid;
     place-items: center;
-    padding: 120px 0px; 
+    padding: 100px 0px;
 
     .avenir_heavy {
         font-size: 40px;
         color: #1f1f1f;
     }
+
     .avenir_roman {
         margin: 20px 0px;
     }
 }
+
+.avenir_heavy,
+.avenir_roman {
+    text-align: center;
+}
+
+.features-container {
+
+    margin-top: 70px;
+
+    .feature-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: stretch;
+    }
+
+    .left-description,
+    .right-description {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .phone-model {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .phone-holder {
+            position: relative;
+
+            .animated.phone-screen {
+                position: absolute;
+                top: 70px;
+                left: 18px;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+
+                &.active {
+                    opacity: 1;
+                }
+
+                .picture {
+                    text-align: center;
+
+                    .feature-image {
+                        width: 210px;
+                        height: auto;
+                        position: relative;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+
+        .phone-placeholder {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .holder {
+                width: 250px;
+                height: auto;
+                display: block;
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+
+    .right-description,
+    .left-description {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .features-list {
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px;
+
+            &:hover {
+                background-color: #f0f0f0;
+            }
+
+            &.active {
+                background-color: #f26ca7;
+                border-radius: 10px;
+
+                p, h2 {
+                    color: white !important;
+                }
+
+            }
+
+            i {
+                font-size: 24px;
+                margin-right: 10px;
+            }
+
+            .feature-info {
+                flex: 1;
+                padding: 15px;
+
+                h2 {
+                    font-size: 20px;
+                    margin: 0;
+                    color: #333;
+                }
+
+                p {
+                    margin: 5px 0 0;
+                    color: #666;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .feature-row {
+            flex-direction: column; 
+        }
+
+        .phone-model {
+            order: -1; 
+        }
+    }
+}
+
+.what-to-do {
+    margin: 150px 0px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .grid-item {
+    position: relative;
+  }
+
+  .num-bg {
+    color: white;
+    left: 40px;
+    position: absolute;
+    font-weight: 900;
+    font-size: 100px;
+    opacity: 0.2;
+  }
+  
+  .caption {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    left: 40px;
+    top: 120px;
+  }
+
+  .description {
+    color: white;
+    padding: 100px 40px 40px 40px;
+    margin-top: 60px;
+  }
+
+  .grid-item {
+    width: 25%; 
+  
+    @media only screen and (max-width: 768px) {
+      width: 50%;
+    }
+  
+    @media only screen and (max-width: 480px) {
+      width: 100%; 
+    }
+  
+    &:nth-child(even) {
+      background-color: #f26ca7;
+      color: white;
+
+    }
+  
+    &:nth-child(odd) {
+      background-color: #89cff0;
+      color: white;
+
+    }
+  }
+
+
+

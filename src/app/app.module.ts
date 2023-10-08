@@ -7,6 +7,8 @@ import { TopnavComponent } from './topnav/topnav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
+import { AppFeaturesComponent } from './app-features/app-features.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 // Angular Material
 import { MatSidenavModule } from '@angular/material/sidenav'; // Import this
@@ -15,7 +17,6 @@ import { MatSidenavModule } from '@angular/material/sidenav'; // Import this
 import { DrawerService } from './services/drawer.service';
 import { AssetsService } from './services/assets.service';
 
-import { AppFeaturesComponent } from './app-features/app-features.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AppFeaturesComponent } from './app-features/app-features.component';
     TopnavComponent,
     HomeComponent,
     AppFeaturesComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

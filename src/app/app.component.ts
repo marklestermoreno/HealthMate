@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef} from '@angular/core';
+import { ViewportScroller } from '@angular/common';
 import { DrawerService } from './services/drawer.service';
 import { AssetsService } from './services/assets.service';
 
@@ -14,7 +15,10 @@ assetsLoaded = false;
   
   constructor(
     private drawerService: DrawerService, 
-    private assetsService: AssetsService
+    private assetsService: AssetsService,
+    private renderer: Renderer2, 
+    private el: ElementRef, 
+    private viewportScroller: ViewportScroller
     ) { }
 
   ngOnInit(): void {
@@ -31,5 +35,10 @@ assetsLoaded = false;
       this.isDrawerOpen = isOpen;
     });
   }
+
+  scrollToTop() {
+    this.renderer.setProperty(document.documentElement, 'scrollTop', 0);
+  }
+  
 
 }

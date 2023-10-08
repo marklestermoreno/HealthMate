@@ -47,6 +47,7 @@ export class HomeComponent {
 
   assetsLoaded = false;
   assets: string[] = [];
+  dataPaths: any;
 
 
   animationState = '';
@@ -60,17 +61,12 @@ export class HomeComponent {
   ngOnInit() {
 
     this.assetsService.loadAssets()
-      .then(loadedAssets => {
-        this.assets = loadedAssets.map((a) => a.src);
+      .then(result => {
+        this.assets = result.map(asset => asset.currentSrc);
         this.assetsLoaded = true;
 
-        // Run change detection to update the view
         this.cdRef.detectChanges();
       })
-      .catch(error => {
-        console.error(error);
-        // Handle error loading assets
-      });
     setTimeout(() => {
       this.animationState = 'typing';
     }, 1000);

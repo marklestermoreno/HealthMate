@@ -1,0 +1,128 @@
+
+@mixin messageStatus {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: -15px;
+    padding: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    align-items: center;
+    align-self: center;
+    padding: 30px;
+}
+
+.icon {
+    width: 200px;
+}
+
+.primaryText {
+    margin-left: 0.2rem;
+}
+
+.secondaryText {
+    margin-left: -0.3rem;
+}
+
+.primaryText,
+.secondaryText {
+    font-size: 2rem;
+}
+
+.avenir_light {
+    margin: 0px 0px 20px 0px;
+    text-align: center !important;
+    font-style: italic;
+}
+
+.form-control {
+    text-align: start;
+    margin-right: 12px;
+    width: 90%;
+
+    input,
+    textarea {
+        padding: 5px;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    input:focus,
+    textarea:focus {
+        border: 2px solid #f26ca7;
+        outline: none;
+    }
+
+    .form-item {
+        margin-top: 10px;
+    }
+
+    .btn-group {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 7px 15px;
+        margin: 0px 5px;
+        transition-duration: 300ms;
+    }
+
+    .cancel {
+        border: 1px solid #f26ca7;
+        color: #f26ca7;
+        background: white;
+    }
+
+    .btn-healthmate {
+        border: none;
+        background: #f26ca7;
+        color: white;
+    }
+
+    .btn:hover,
+    button:disabled {
+        opacity: 0.7;
+        cursor: pointer;
+        transition-duration: 300ms;
+    }
+
+    .loading-icon {
+        margin: -10px -5px -10px -10px;
+        width: 30px;
+    }
+
+    .required {
+        color: #ef4444;
+    }
+
+    .error-border {
+        border: 1px solid #ef4444;
+    }
+
+    .error-message {
+        margin-top: 5px;
+        color: #ef4444;
+        text-align: center;
+        font-size: 15px !important;
+    }
+
+    .text-green {
+        background-color: #22c55e;
+        @include messageStatus();
+
+    }
+
+    .text-red {
+        background-color: #ef4444;
+        @include messageStatus();
+    }
+
+}

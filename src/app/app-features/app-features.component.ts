@@ -13,7 +13,7 @@ import { AssetsService } from '../services/assets.service';
 })
 export class AppFeaturesComponent implements OnInit {
 
-  assets: HTMLImageElement[] = [];
+  assets: string[] = [];
   dataPaths: any;
   activeFeatureIndex: number | null = null;
 
@@ -23,7 +23,7 @@ export class AppFeaturesComponent implements OnInit {
     // Image Assets
     this.assetsService.loadAssets()
       .then(result => {
-        this.assets = result;
+        this.assets = result.map(asset => asset.currentSrc);
         this.cdRef.detectChanges();
       })
       .catch(error => {

@@ -1,0 +1,56 @@
+footer {
+    display: flex;
+    background: #222;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+    padding: 80px 80px 20px 80px;
+        color: white;
+
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-us p {
+    flex: 1;
+    flex-wrap: wrap;
+    line-height: 30px;
+    padding: 10px 0px;
+}
+
+.primaryText {
+        margin-left: -0.2rem;
+}
+
+.secondaryText {
+    margin-left: -0.5rem;
+}
+
+.contacts {
+    margin: 30px 0px;
+}
+
+.healthmate-btn {
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px 15px;
+    background: #f26ca7;
+    color: white;
+    border: none;
+    transition: 0.2s background;
+}
+
+.healthmate-btn:hover {
+    cursor: pointer;
+    background-color: #89cff0;
+    transition-duration: 200ms;
+}
+
+.healthmate-btn:focus{
+    outline: none;
+}

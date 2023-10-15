@@ -1,19 +1,114 @@
 .centered-container {
-    align-items: center;
-    place-items: center;
-    padding: 0px 0px 50px 0px;
+  align-items: center;
+  place-items: center;
+  margin-top: -90px;
+  padding: 0px 0px 50px 0px;
 
-    .avenir_heavy {
-        font-size: 40px;
-        color: #1f1f1f;
-    }
+  .avenir_heavy {
+    font-size: 40px;
+    color: #1f1f1f;
+  }
 
-    .avenir_roman {
-        margin: 20px 0px;
-    }
+  .avenir_roman {
+    margin: 20px 0px;
+  }
 }
 
 .avenir_heavy,
 .avenir_roman {
-    text-align: center;
+  text-align: center;
+}
+
+
+
+.about-us {
+  margin: 50px 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.devs {
+  position: relative;
+  text-align: center;
+  border: 0.2px solid rgb(209, 209, 209);
+  margin: 0px 5px;
+}
+
+.caption {
+  margin-top: 20px;
+  text-align: center;
+  color: #1f1f1f;
+  font-size: 20px;
+}
+
+.description {
+  text-align: justify;
+  padding: 20px 10px;
+  margin-top: 10px;
+}
+
+.about-us-image {
+  margin-top: 30px;
+  border-radius: 50%;
+  width: 200px;
+}
+
+.position {
+  font-size: 13px;
+}
+
+.icons {
+  background: #f26ca7;
+  padding: 10px;
+  margin: 0px 10px 20px 10px;
+  width: 15px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.5s;
+}
+
+.icons:hover {
+  background: #777777;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+.devs {
+  width: 23%;
+
+
+  @media (min-width: 481px) and (max-width: 992px) {
+    margin-top: 10px;
+    width: 46%;
+  }
+
+  @media only screen and (max-width: 480px) {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+}
+
+
+.faq {
+  padding: 50px 10px;
+  background: #f26ca7;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  user-select: none;
+  transition: background 0.5s, color 0.5s;  
+}
+
+.caption-navigator {
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+}
+
+.faq:hover {
+  background: #89cff0;
+  transition-duration: 500ms;
+  cursor: pointer;
 }

@@ -48,6 +48,13 @@
 
 
 @mixin large_extralarge {
+
+  #features,  #aboutus  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .home-section {
     width: 100%;
     justify-content: center;

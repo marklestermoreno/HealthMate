@@ -1,26 +1,19 @@
-<!-- Toolbar -->
 <div class="healthcare_page" *ngIf="assetsLoaded; else loadingIndicator">
-  <div class="top-nav">
-    <TopNav> </TopNav>
+  <div class="top-nav" *ngIf="currentPath !== '/faq'">
+    <TopNav></TopNav>
   </div>
-  <div class="container">
-    <div id="home">
-      <Home></Home>
-    </div>
-    <div id="features">
-      <Features></Features>
-    </div>
-    <div id="aboutus">
-      <AboutUs></AboutUs>
-    </div>
+  <div class="container" id="home">
+    <router-outlet></router-outlet> <!-- Home, Features, About Us components will be displayed here -->
   </div>
 
-  <router-outlet></router-outlet>
   <mat-drawer #drawer class="custom-drawer" position="end" mode="side" [opened]="isDrawerOpen">
     <!-- Sidenav content -->
     <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
+      <li (click)="navigateToHome()">Home</li>
+      <li (click)="scrollToSection('features')">Features</li>
+      <li (click)="scrollToSection('aboutus')">About Us</li>
+      <li (click)="navigateToFAQ()">FAQ</li>
+      <li (click)="scrollToSection('footer')">Contact</li>
     </ul>
   </mat-drawer>
 
@@ -29,15 +22,10 @@
       <mat-icon>arrow_upward</mat-icon>
     </button>
   </div>
-  
-
 </div>
 
 <ng-template #loadingIndicator>
-
-  <!-- Loading indicator for home component -->
   <div class="centered-container">
     <img src="../assets/loading.gif" alt="healthmate-loading" class="centered-image" />
   </div>
-
 </ng-template>

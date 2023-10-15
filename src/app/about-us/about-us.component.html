@@ -1,10 +1,42 @@
 <div class="centered-container">
-    <div class="header">
-      <p class="avenir_heavy"> HealthMate Dev Team </p>
-      <p class="avenir_roman">
-        <b> Discover the minds behind HealthMate </b>– a dynamic group of BSIT students from PUP Sta. Mesa. 
-        <br /> We're driven by innovation and committed to creating a revolutionary healthcare experience
-        <br /> just for you. Let's build a healthier future together!
-      </p>
+  <div class="header">
+    <p class="avenir_heavy"> HealthMate Dev Team </p>
+    <p class="avenir_roman">
+      <b> Discover the minds behind HealthMate </b>– a dynamic group of BSIT students from PUP Sta. Mesa.
+      <br /> We're driven by innovation and committed to creating a revolutionary healthcare experience
+      <br /> just for you. Let's build a healthier future together!
+    </p>
+  </div>
+
+  <!-- Devs   -->
+  <div class="about-us">
+
+    <div class="devs" *ngFor="let about of dataPaths; let i = index">
+      <img [src]="about.assetPath" alt="about" class="about-us-image">
+      <h4 class="caption"> {{about.name}} </h4>
+      <span class="position">{{about.position}} </span>
+      <p class="description"> {{about.description}} </p>
+
+      <div class="socmed-icon">
+        <a [href]="about.fbLink">
+          <img [src]="assets[3]" alt="facebook-icon" class="icons" />
+        </a>
+
+        <a [href]="about.ghlink">
+          <img [src]="assets[4]" alt="github-icon" class="icons" />
+        </a>
+
+        <a [href]="about.lilink">
+          <img [src]="assets[5]" alt="indeed-icon" class="icons" />
+        </a>
+      </div>
     </div>
+  </div>
+
+
+</div>
+<div class="faq" (click)="navigateToFAQ()">
+  <div class="navigator">
+    <p class="caption-navigator">Questions? Click here to know our frequently asked questions on our services!</p>
+  </div>
 </div>

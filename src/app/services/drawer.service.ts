@@ -6,12 +6,16 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class DrawerService {
 
-  private isDrawerOpenSubject = new BehaviorSubject<boolean>(false);
-  isDrawerOpen$: Observable<boolean> = this.isDrawerOpenSubject.asObservable();
+  private isDrawerOpenSource = new BehaviorSubject<boolean>(false);
+  isDrawerOpen$ = this.isDrawerOpenSource.asObservable();
+
+  constructor() {}
 
   toggleDrawer() {
-    this.isDrawerOpenSubject.next(!this.isDrawerOpenSubject.value);
+    this.isDrawerOpenSource.next(!this.isDrawerOpenSource.value);
   }
 
-  constructor() { }
+  closeDrawer() {
+    this.isDrawerOpenSource.next(false);
+  }
 }

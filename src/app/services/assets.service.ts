@@ -1,5 +1,6 @@
 // assets.service.ts
 import { Injectable } from '@angular/core';
+import { about } from 'src/data/about-us';
 import { features } from 'src/data/featuring-data';
 
 @Injectable({
@@ -12,12 +13,15 @@ export class AssetsService {
     const assetPaths = [
       '../../assets/big_phone_home.png',
       '../../assets/small_phone_home.png',
-      '../../assets/phone_model.png'
+      '../../assets/phone_model.png',
+      '../../assets/icons/facebook.png',
+      '../../assets/icons/github.png',
+      '../../assets/icons/linkedin.png',
     ];
-  
+
     return Promise.all(
-        assetPaths.map(path => this.loadImage(path)),
-      );
+      assetPaths.map(path => this.loadImage(path)),
+    );
   }
 
   loadFeaturesAssets(): Promise<{ dataPaths: { id: number, name: string, description: string, asset: HTMLImageElement }[] }> {
@@ -27,6 +31,25 @@ export class AssetsService {
     ).then(assets => {
       const dataPaths = features.map((feature, index) => ({
         ...feature,
+        asset: assets[index]
+      }));
+
+      return { assets, dataPaths };
+    });
+  }
+
+  loadAboutUs(): Promise<{
+    dataPaths: {
+      id: number, name: string, position: string, description: string,
+      fbLink: string, ghlink: string, lilink: string, asset: HTMLImageElement
+    }[]
+  }> {
+    const aboutUsPaths = about.map(aboutus => aboutus.assetPath);
+    return Promise.all(
+      aboutUsPaths.map(aboutus => this.loadImage(aboutus)),
+    ).then(assets => {
+      const dataPaths = about.map((aboutus, index) => ({
+        ...aboutus,
         asset: assets[index]
       }));
 

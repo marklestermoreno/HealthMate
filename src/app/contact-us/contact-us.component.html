@@ -1,0 +1,61 @@
+<div class="contact-form">
+  <h1 class="avenir_black primaryText"> HEALTH
+    <span class="secondaryText avenir_black"> MATE </span>
+  </h1>
+  <span class="avenir_light"> Your information is securely stored. Expect a response within 3-5 business days.
+    Thank you for using HealthMate! </span>
+
+  <form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="form-control">
+
+    <div>
+      <label for="name">Name <span class="required"> * </span> </label>
+      <input type="text" id="name" formControlName="name" [ngClass]="{'error-border': isInvalid('name')}"
+        [disabled]="isLoading">
+    </div>
+    <div *ngIf="isInvalid('name')">
+      <p class="error-message"> {{ nameErrorMessage }}</p>
+    </div>
+
+    <div class="form-item">
+      <label for="Email">Email <span class="required"> * </span> </label>
+      <input type="email" id="Email" formControlName="email" [ngClass]="{'error-border': isInvalid('email')}"
+        [disabled]="isLoading">
+    </div>
+    <div *ngIf="isInvalid('email')">
+      <p class="error-message"> {{ emailErrorMessage }}</p>
+    </div>
+
+    <div class="form-item">
+      <label for="subject">Subject <span class="required"> * </span> </label>
+      <input type="text" id="subject" formControlName="subject" [ngClass]="{'error-border': isInvalid('subject')}"
+        [disabled]="isLoading">
+    </div>
+    <div *ngIf="isInvalid('subject')">
+      <p class="error-message" *ngIf="subjectErrorMessage"> {{ subjectErrorMessage }}</p>
+    </div>
+
+    <div class="form-item">
+      <label for="message">Message <span class="required"> * </span> </label>
+      <textarea id="message" formControlName="message" [ngClass]="{'error-border': isInvalid('message')}"
+        [disabled]="isLoading" required></textarea>
+    </div>
+    <div *ngIf="isInvalid('message')">
+      <p class="error-message" *ngIf="messageErrorMessage"> {{ messageErrorMessage }}</p>
+    </div>
+
+    <div *ngIf="this.responseMessage">
+      <p [ngClass]="this.classStatus"> {{this.responseMessage}} </p>
+    </div>
+
+    <div class="btn-group form-item">
+
+      <button type="button" class="btn cancel" [disabled]="isLoading" (click)="closeModal()"> Cancel </button>
+      <button type="submit" [disabled]="isLoading" class="btn btn-healthmate" *ngIf="!this.responseMessage">
+        <img src="../../assets/loading-data.gif" class="loading-icon" *ngIf="isLoading" />
+        {{isLoading ? "Sending" : "Send Email"}}
+      </button>
+
+    </div>
+
+  </form>
+</div>

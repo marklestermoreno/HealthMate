@@ -1,0 +1,103 @@
+.faq {
+    padding: 0px 20px;
+    user-select: none;
+}
+
+.faq-container {
+    margin: 30px 0px;
+    padding: 20px;
+}
+
+.centered-container {
+    align-items: center;
+    place-items: center;
+    display: grid;
+    place-items: center; // Center both horizontally and vertically
+    height: 100vh;
+}
+
+.centered-image {
+    width: 250px;
+}
+
+.categories-header {
+    color: #f26ca7;
+    font-weight: 900;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.bg-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.faq-bg {
+    min-width: 400px;
+    max-width: 800px;
+}
+
+.question,
+.answer {
+    padding: 10px 15px;
+}
+
+.answer {
+    font-weight: 300 !important;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    border-bottom: 1px solid #777;
+
+    p,
+    .icon {
+        color: #777;
+        font-weight: 500;
+    }
+}
+
+.question:hover {
+    cursor: pointer;
+}
+
+.answer-container {
+    border: 1px solid #f26ca7;
+    background: #f26ca7;
+    border-bottom: top;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.answer {
+    color: white;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+.back-button {
+    margin: 20px;
+    text-align: center;
+}
+
+.btn-healthmate {
+    border: none;
+    background: #f26ca7;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.btn:hover,
+button:disabled {
+    opacity: 0.7;
+    cursor: pointer;
+    transition-duration: 300ms;
+}

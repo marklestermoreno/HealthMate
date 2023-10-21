@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { about } from 'src/data/about-us';
 import { features } from 'src/data/featuring-data';
+import { faq } from 'src/data/faq';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class AssetsService {
       '../../assets/icons/facebook.png',
       '../../assets/icons/github.png',
       '../../assets/icons/linkedin.png',
+      '../../assets/faq.png'
     ];
 
     return Promise.all(
@@ -57,6 +59,26 @@ export class AssetsService {
     });
   }
 
+  loadFAQ(): Promise<{
+    dataPaths: {
+      id: number;
+      question: string;
+      answer: string;
+      categoriesCode: string;
+    }[];
+  }> {
+    const dataPaths = faq.map(faqData => ({
+      id: faqData.id,
+      question: faqData.question,
+      answer: faqData.answer,
+      categoriesCode: faqData.categoriesCode,
+    }));
+
+    return Promise.resolve({ dataPaths });
+  }
+
+
+
   private loadImage(path: string): Promise<HTMLImageElement> {
     return new Promise((resolve, reject) => {
       const img = new Image();
@@ -65,4 +87,5 @@ export class AssetsService {
       img.onerror = () => reject(`Failed to load asset: ${path}`);
     });
   }
+
 }

@@ -1,9 +1,8 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { ChangeDetectorRef } from '@angular/core';
 
 // Services
-
 import { AssetsService } from '../services/assets.service';
 
 @Component({
@@ -50,7 +49,6 @@ export class HomeComponent {
 
 
   animationState = '';
-  windowWidth: number = window.innerWidth;
 
   constructor(private assetsService: AssetsService,
     private cdRef: ChangeDetectorRef
@@ -69,10 +67,4 @@ export class HomeComponent {
       this.animationState = 'typing';
     }, 1000);
   }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.windowWidth = event.target.innerWidth;
-  }
-
 }

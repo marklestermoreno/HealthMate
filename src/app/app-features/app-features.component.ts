@@ -1,5 +1,4 @@
 // app-features.component.ts
-
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { interval } from 'rxjs';
 
@@ -17,7 +16,8 @@ export class AppFeaturesComponent implements OnInit {
   dataPaths: any;
   activeFeatureIndex: number | null = null;
 
-  constructor(private assetsService: AssetsService, private cdRef: ChangeDetectorRef) { }
+  constructor(private assetsService: AssetsService,
+    private cdRef: ChangeDetectorRef) { }
 
   ngOnInit() {
     // Image Assets
@@ -35,10 +35,9 @@ export class AppFeaturesComponent implements OnInit {
       .then(results => {
         this.dataPaths = results.dataPaths;
         this.cdRef.detectChanges();
-
-        // Automatically change active feature every 2 seconds
         interval(2000).subscribe(() => {
           this.changeActiveFeature();
+          console.log(this.activeFeatureIndex)
         });
       })
       .catch(error => {
@@ -66,4 +65,14 @@ export class AppFeaturesComponent implements OnInit {
     this.cdRef.detectChanges();
   }
 
+  getActiveAssetPath(): string | null {
+    if (this.activeFeatureIndex !== null) {
+
+      const activeFeature = this.dataPaths.find((feature: any) => feature.id === this.activeFeatureIndex);
+      if (activeFeature) {
+        return activeFeature.asset;
+      }
+    }
+    return null;
+  }
 }

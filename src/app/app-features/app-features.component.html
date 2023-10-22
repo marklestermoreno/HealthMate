@@ -37,8 +37,7 @@
           </div>
           <div class="animated phone-screen" *ngIf="activeFeatureIndex !== null" [class.active]="true">
             <div class="picture">
-              <img [src]="dataPaths[activeFeatureIndex].assetPath"
-                alt="{{ dataPaths[activeFeatureIndex].asset.currentSrc }}" class="feature-image">
+              <img [src]="getActiveAssetPath()" (alt)="getActiveAssetPath()" class="feature-image">
             </div>
           </div>
         </div>
@@ -48,7 +47,8 @@
       <div class="right-description">
         <ul class="features-list">
           <ng-container *ngFor="let feature of dataPaths; let i = index">
-            <li *ngIf="i >= 3" [class.active]="feature.id === activeFeatureIndex" (click)="setActiveFeature(feature.id)">
+            <li *ngIf="i >= 3" [class.active]="feature.id === activeFeatureIndex"
+              (click)="setActiveFeature(feature.id)">
               <i class="{{ feature.icon }}"></i>
               <div class="feature-info">
                 <h2 class="pink" *ngIf="feature.id === activeFeatureIndex; else inactive">{{ feature.name }}</h2>
@@ -60,33 +60,33 @@
             </li>
           </ng-container>
         </ul>
-        </div>
+      </div>
     </div>
   </div>
 
-    <div class="what-to-do">
- 
-      <div class="grid-item">
-        <span class="num-bg"> 1 </span>
-        <h4 class="caption"> Visit Our Website </h4>
-        <p class="description"> Explore the HealthMate experience by heading to our official website. </p>
-      </div>
-      <div class="grid-item">
-        <span class="num-bg"> 2 </span>
-        <h4 class="caption"> Download HealthMate </h4>
-        <p class="description"> Get the HealthMate app directly from our website or from our team </p>
-      </div>
-      <div class="grid-item">
-        <span class="num-bg"> 3 </span>
-        <h4 class="caption"> Create Account </h4>
-        <p class="description"> Dive into the HealthMate community by setting up your personalized account. </p>
-      </div>
-      <div class="grid-item">
-        <span class="num-bg"> 4 </span>
-        <h4 class="caption"> Enjoy & Rate Our App </h4>
-          <p class="description"> Immerse yourself in the HealthMate experience and share your feedback with us. </p>
-      </div>
+  <div class="what-to-do">
 
-  
+    <div class="grid-item">
+      <span class="num-bg"> 1 </span>
+      <h4 class="caption"> Visit Our Website </h4>
+      <p class="description"> Explore the HealthMate experience by heading to our official website. </p>
+    </div>
+    <div class="grid-item">
+      <span class="num-bg"> 2 </span>
+      <h4 class="caption"> Download HealthMate </h4>
+      <p class="description"> Get the HealthMate app directly from our website or from our team </p>
+    </div>
+    <div class="grid-item">
+      <span class="num-bg"> 3 </span>
+      <h4 class="caption"> Create Account </h4>
+      <p class="description"> Dive into the HealthMate community by setting up your personalized account. </p>
+    </div>
+    <div class="grid-item">
+      <span class="num-bg"> 4 </span>
+      <h4 class="caption"> Enjoy & Rate Our App </h4>
+      <p class="description"> Immerse yourself in the HealthMate experience and share your feedback with us. </p>
+    </div>
+
+
   </div>
 </div>

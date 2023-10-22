@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef} from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 // Import the AssetsService
@@ -14,13 +14,13 @@ export class AboutUsComponent {
   assets: string[] = [];
   dataPaths: any;
 
-  constructor(private assetsService: AssetsService, 
+  constructor(private assetsService: AssetsService,
     private cdRef: ChangeDetectorRef,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit() {
- 
+
     // About US Assets
     this.assetsService.loadAboutUs()
       .then(results => {
@@ -47,7 +47,6 @@ export class AboutUsComponent {
     // Use the router to navigate to another route
     this.router.navigate(['/faq']); // Replace 'another-route' with the actual route path
   }
-  
+
 
 }
-  

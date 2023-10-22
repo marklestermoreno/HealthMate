@@ -1,6 +1,4 @@
 <div class="faq" *ngIf="assetsLoaded; else loadingIndicator">
-    
-
     <div class="bg-container">
         <img [src]="assets[6]" class="faq-bg" />
     </div>
@@ -8,17 +6,14 @@
     <div>
         <div *ngFor="let category of uniqueCategories" class="faq-container">
             <div class="categories-header">{{ correspondingCodes(category) }}</div>
-
             <div class="faq-data">
                 <div *ngFor="let faq of getFaqsForCategory(category)" class="question-answer-container">
                     <div (click)="toggleAnswer(faq)" class="question">
                         <p>{{ faq.question }}</p>
-
                         <div>
                             <span *ngIf="faq.showAnswer; else hideAnswer">
                                 <mat-icon class="icon" color="white">keyboard_arrow_down</mat-icon>
                             </span>
-
                             <ng-template #hideAnswer>
                                 <mat-icon class="icon" color="white">keyboard_arrow_right</mat-icon>
                             </ng-template>
@@ -32,10 +27,9 @@
         </div>
     </div>
 
-    <div class="back-button"  (click)="navigateToHome()">
+    <div class="back-button" (click)="navigateToHome()">
         <button class="btn btn-healthmate"> Back to Home </button>
     </div>
-
 </div>
 
 <ng-template #loadingIndicator>

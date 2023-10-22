@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "healthmate_webapp",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

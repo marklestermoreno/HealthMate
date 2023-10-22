@@ -12,7 +12,7 @@ import { AppFeaturesComponent } from './app-features/app-features.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 
 // Angular Material
-import { MatSidenavModule } from '@angular/material/sidenav'; 
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 
 // Services
@@ -22,6 +22,11 @@ import { ModalService } from './services/modal.service';
 import { FaqComponent } from './faq/faq.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+
+// Firebase
+import { environment } from '../environments/environment';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -43,7 +48,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     MatSidenavModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [DrawerService, AssetsService, ModalService],
   bootstrap: [AppComponent]

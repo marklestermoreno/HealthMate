@@ -12,7 +12,7 @@
   <div class="about-us">
 
     <div class="devs" *ngFor="let about of dataPaths; let i = index">
-      <img [src]="about.assetPath" alt="about" class="about-us-image">
+      <img [src]="about.asset" (alt)="about.name" class="about-us-image">
       <h4 class="caption"> {{about.name}} </h4>
       <span class="position">{{about.position}} </span>
       <p class="description"> {{about.description}} </p>

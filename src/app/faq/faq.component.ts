@@ -23,7 +23,7 @@ import { Router } from '@angular/router';
 })
 export class FaqComponent {
 
-  faqData: any[] = [];
+  faqData: any;
   assets: string[] = [];
   assetsLoaded = false;
 
@@ -48,7 +48,7 @@ export class FaqComponent {
   categorizeFaqs(): { [key: string]: any[] } {
     const categorizedFaqs: { [key: string]: any[] } = {};
 
-    this.faqData.forEach((item) => {
+    this.faqData.forEach((item: any) => {
       if (!categorizedFaqs[item.categoriesCode]) {
         categorizedFaqs[item.categoriesCode] = [];
       }
@@ -88,12 +88,12 @@ export class FaqComponent {
 
   get uniqueCategories(): string[] {
     // Get unique category codes
-    return Array.from(new Set(this.faqData.map((faq) => faq.categoriesCode)));
+    return Array.from(new Set(this.faqData.map((faq: any) => faq.categoriesCode)));
   }
-  
+
   getFaqsForCategory(category: string): any[] {
     // Filter FAQs based on the category code
-    return this.faqData.filter((faq) => faq.categoriesCode === category);
+    return this.faqData.filter((faq: any) => faq.categoriesCode === category);
   }
 
   navigateToHome() {

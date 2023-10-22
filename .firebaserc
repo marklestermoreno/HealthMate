@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "healthmate-pup": {
+      "hosting": {
+        "healthmate_webapp": [
+          "healthmate-pup"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "healthmate-pup"
+  }
+}

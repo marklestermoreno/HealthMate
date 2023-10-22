@@ -47,15 +47,16 @@ export class HomeComponent {
   assets: string[] = [];
   dataPaths: any;
 
-
+  categories: any[] = []; // Use the appropriate type for categories
   animationState = '';
+
+  featured: any = [];
 
   constructor(private assetsService: AssetsService,
     private cdRef: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
-
     this.assetsService.loadAssets()
       .then(result => {
         this.assets = result.map(asset => asset.currentSrc);

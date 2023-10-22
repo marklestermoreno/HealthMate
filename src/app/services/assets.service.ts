@@ -95,9 +95,9 @@ export class AssetsService {
               name: data['name'],
               position: data['position'],
               description: data['description'],
-              fbLink: data['fblink'],
+              fbLink: data['fbLink'],
               ghLink: data['ghlink'],
-              liLink: data['liilnk'],
+              liLink: data['lilink'],
               asset: data['assetPath'],
             }));
             return { dataPaths };

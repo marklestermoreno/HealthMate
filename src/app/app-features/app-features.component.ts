@@ -37,7 +37,6 @@ export class AppFeaturesComponent implements OnInit {
         this.cdRef.detectChanges();
         interval(2000).subscribe(() => {
           this.changeActiveFeature();
-          console.log(this.activeFeatureIndex)
         });
       })
       .catch(error => {

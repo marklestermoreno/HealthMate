@@ -27,6 +27,8 @@ export class AboutUsComponent {
         this.dataPaths = results.dataPaths;
         this.cdRef.detectChanges();
 
+        console.log(this.dataPaths);
+
       })
       .catch(error => {
         console.error(error);
